@@ -9,10 +9,6 @@ import AlbumList from './AlbumList';
 class App extends React.Component {
     state = { albums: [] };
     onSearchSubmit = async (term) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://account.kkbox.com/oauth2/token');
-        xhr.send("Content-Type", "application/x-www-form-urlencoded");
-        console.log(xhr)
 
         const res = await kkbox
             .get('/search?', {
